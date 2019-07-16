@@ -10,6 +10,13 @@ States — Chicago, New York City, and Washington. I had to write code to (a) im
 questions about it by computing descriptive statistics, and (b) write a script that takes in raw input to create an interactive
 experience in the terminal to present these statistics.
 
+### What Software Do I Need?
+To complete this project, the following software requirements apply:
+
+- You should have Python 3, NumPy, and pandas installed using Anaconda
+- A text editor, like Sublime or Atom.
+- A terminal application (Terminal on Mac and Linux or Cygwin on Windows).
+
 ### The Datasets
 Randomly selected data for the first six months of 2017 are provided for all three cities. All three of the data files contain the same core six (6) columns:
 
