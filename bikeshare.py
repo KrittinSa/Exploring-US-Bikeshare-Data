@@ -19,7 +19,8 @@ def get_filters():
     invalid_inputs = "Invalid input. Please try again."
 
     print("Hello! Let's explore some US bikeshare data!")
-    # TO DO: get user raw_input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # TO DO: get user raw_input for city (chicago, new york city, washington).
+    # HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWould you like to see data for Chicago, New York, Washington.\n").lower()
         if city in ['chicago', 'new york', 'washington']:
