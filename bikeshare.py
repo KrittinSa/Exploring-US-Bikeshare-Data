@@ -15,9 +15,9 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    
-    invalid_inputs = "Invalid input. Please try again." 
-    
+
+    invalid_inputs = "Invalid input. Please try again."
+
     print("Hello! Let's explore some US bikeshare data!")
     # TO DO: get user raw_input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -26,7 +26,7 @@ def get_filters():
             break
         else:
             print(invalid_inputs)
-    
+
     # TO DO: get user raw_input for month (all, january, february, ... , june)
     while True:
         month = input("\nWhich month you to see? january, february, march,"
@@ -60,7 +60,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     file_name = CITY_DATA[city]
-    print ("Accessing data from: " + file_name)
+    print ("Accessing data from: {}".format(file_name))
     df = pd.read_csv(file_name)
 
     # convert the Start Time column to datetime
@@ -100,7 +100,7 @@ def time_stats(df):
     month = df['Start Time'].dt.month
     weekday_name = df['Start Time'].dt.weekday_name
     hour = df['Start Time'].dt.hour
-    
+
     # TO DO: display the most common month
     most_common_month = month.mode()[0]
     print('Most common month: ', most_common_month)
@@ -112,7 +112,7 @@ def time_stats(df):
     # TO DO: display the most common start hour
     common_start_hour = hour.mode()[0]
     print('Most common start hour: ', common_start_hour)
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -187,7 +187,7 @@ def user_stats(df):
         print("\nMost recent year of birth: " + str(most_recent_birth_year))
         print("\nMost common year of birth: " + str(common_birth_year))
 
-    print("\nThis took %s seconds." % (time.time() - start_time))    
+    print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
 def raw_data(df):
@@ -200,7 +200,7 @@ def raw_data(df):
             line_number += 5
             user_input = input('\nDo you want to see more raw data? Enter yes or no.\n')
         else:
-            break    
+            break
 
 def main():
     while True:
