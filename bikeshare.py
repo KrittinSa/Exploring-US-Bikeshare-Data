@@ -19,7 +19,8 @@ def get_filters():
     invalid_inputs = "Invalid input. Please try again."
 
     print("Hello! Let's explore some US bikeshare data!")
-    # TO DO: get user raw_input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # TO DO: get user raw_input for city (chicago, new york city, washington).
+    # HINT: Use a while loop to handle invalid inputs
     while True:
         city = input("\nWould you like to see data for Chicago, New York, Washington.\n").lower()
         if city in ['chicago', 'new york', 'washington']:
@@ -60,7 +61,7 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     file_name = CITY_DATA[city]
-    print ("Accessing data from: " + file_name)
+    print ("Accessing data from: {}".format(file_name))
     df = pd.read_csv(file_name)
 
     # convert the Start Time column to datetime
@@ -183,9 +184,9 @@ def user_stats(df):
         earliest_birth_year = df['Birth Year'].min()
         most_recent_birth_year = df['Birth Year'].max()
         common_birth_year = df['Birth Year'].mode()[0]
-        print("\nEarliest year of birth: " + str(earliest_birth_year))
-        print("\nMost recent year of birth: " + str(most_recent_birth_year))
-        print("\nMost common year of birth: " + str(common_birth_year))
+        print("\nEarliest year of birth: {}".format(str(earliest_birth_year)))
+        print("\nMost recent year of birth: {}".format(str(most_recent_birth_year)))
+        print("\nMost common year of birth: {}".format(str(common_birth_year)))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
